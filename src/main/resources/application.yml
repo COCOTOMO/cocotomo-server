@@ -3,10 +3,10 @@ spring:
     name: practice
   
   mail:
-    host: ${SMTP_HOST:smtp.gmail.com}
-    port: ${SMTP_PORT:587}
-    username: ${SMTP_USERNAME:test@example.com}
-    password: ${SMTP_PASSWORD:test-password}
+    host: smtp.gmail.com
+    port: 587
+    username: ${SMTP_USERNAME}
+    password: ${SMTP_PASSWORD}
     properties:
       mail:
         smtp:
@@ -15,31 +15,23 @@ spring:
             enable: true
   
   datasource:
-    url: ${DATABASE_URL:jdbc:mysql://localhost:3307/cocotomo?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
-    username: ${DATABASE_USERNAME:root}
-    password: ${DATABASE_PASSWORD:password}
-    driver-class-name: ${DATABASE_DRIVER:com.mysql.cj.jdbc.Driver}
+    url: jdbc:mysql://localhost:3306/cocotomo?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-    database-platform: ${DATABASE_DIALECT:org.hibernate.dialect.MySQLDialect}
+    database-platform: org.hibernate.dialect.MySQLDialect
   
   data:
     redis:
-      host: ${REDIS_HOST:localhost}
-      port: ${REDIS_PORT:6379}
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
       password: ${REDIS_PASSWORD}
 
-  ai:
-    openai:
-      api-key: ${OPENAI_API_KEY:test-key}
-      chat:
-        options:
-          model: gpt-4.1-nano
-          temperature: 0.7
-
 jwt:
-  secret: ${JWT_SECRET:mySecretKeyForJWTAuthentication12345678901234567890}
+  secret: ${JWT_SECRET}
   expiration: 86400000
