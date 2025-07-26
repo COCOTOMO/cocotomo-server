@@ -1,4 +1,4 @@
-package com.study.practice.entity;
+package com.uthon.cocotomo.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

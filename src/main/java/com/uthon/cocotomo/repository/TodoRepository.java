@@ -1,7 +1,7 @@
-package com.study.practice.repository;
+package com.uthon.cocotomo.repository;
 
-import com.study.practice.entity.Todo;
-import com.study.practice.entity.User;
+import com.uthon.cocotomo.entity.Todo;
+import com.uthon.cocotomo.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

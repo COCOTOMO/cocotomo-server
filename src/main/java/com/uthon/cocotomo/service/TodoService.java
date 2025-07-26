@@ -1,12 +1,12 @@
-package com.study.practice.service;
+package com.uthon.cocotomo.service;
 
-import com.study.practice.dto.TodoItemsRequest;
-import com.study.practice.dto.TodoRequest;
-import com.study.practice.dto.TodoResponse;
-import com.study.practice.entity.Todo;
-import com.study.practice.entity.User;
-import com.study.practice.repository.TodoRepository;
-import com.study.practice.repository.UserRepository;
+import com.uthon.cocotomo.dto.TodoItemsRequest;
+import com.uthon.cocotomo.dto.TodoRequest;
+import com.uthon.cocotomo.dto.TodoResponse;
+import com.uthon.cocotomo.entity.Todo;
+import com.uthon.cocotomo.entity.User;
+import com.uthon.cocotomo.repository.TodoRepository;
+import com.uthon.cocotomo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;

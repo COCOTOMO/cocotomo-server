@@ -1,10 +1,10 @@
-package com.study.practice.controller;
+package com.uthon.cocotomo.controller;
 
-import com.study.practice.dto.TodoItemsRequest;
-import com.study.practice.dto.TodoRequest;
+import com.uthon.cocotomo.dto.TodoItemsRequest;
+import com.uthon.cocotomo.dto.TodoRequest;
 import lombok.RequiredArgsConstructor;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import com.study.practice.service.TodoService;
+import com.uthon.cocotomo.service.TodoService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

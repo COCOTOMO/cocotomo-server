@@ -1,4 +1,4 @@
-package com.study.practice.dto;
+package com.uthon.cocotomo.dto;
 
 import lombok.Data;
 
