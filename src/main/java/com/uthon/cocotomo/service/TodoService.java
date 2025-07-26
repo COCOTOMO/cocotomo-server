@@ -32,7 +32,7 @@ public class TodoService {
         todo.setContent(request.getContent());
         todo.setCompleted(false);
         todo.setUser(user);
-        todo.setDate(LocalDate.now());
+        todo.setDate(LocalDate.now().toString());
         todoRepository.save(todo);
     }
 
@@ -44,7 +44,7 @@ public class TodoService {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userRepository.findByEmail(userDetails.getUsername())
             .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-        List<Todo> todos = todoRepository.findAllByUserAndDate(user, request.getDate());
+        List<Todo> todos = todoRepository.findAllByUserAndDate(user, request.getDate().toString());
         return todos.stream()
             .map(todo -> {
                 return new TodoResponse(

@@ -28,5 +28,5 @@ public class Todo {
     private User user;
 
     @Column(nullable = false)
-    private LocalDate date;
+    private String date;
 }

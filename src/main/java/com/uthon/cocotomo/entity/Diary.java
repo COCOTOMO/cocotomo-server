@@ -21,7 +21,7 @@ public class Diary {
     private String content;
 
     @Column(nullable = false)
-    private LocalDate date;
+    private String date;
 
     @JoinColumn(name = "fk_user_id")
     @ManyToOne(fetch = FetchType.LAZY)

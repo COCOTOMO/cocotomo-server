@@ -10,5 +10,5 @@ import java.util.List;
 
 @Repository
 public interface TodoRepository extends JpaRepository<Todo, Long> {
-    List<Todo> findAllByUserAndDate(User user, LocalDate date);
+    List<Todo> findAllByUserAndDate(User user, String date);
 }

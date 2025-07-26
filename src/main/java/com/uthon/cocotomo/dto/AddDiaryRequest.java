@@ -5,6 +5,7 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
-public class TodoItemsRequest {
-    private String date;
+public class AddDiaryRequest {
+    private String content;
+    private LocalDate date;
 }
