@@ -3,13 +3,13 @@ package com.uthon.cocotomo.service;
 import com.uthon.cocotomo.dto.AddDiaryRequest;
 import com.uthon.cocotomo.entity.Diary;
 import com.uthon.cocotomo.entity.User;
+import com.uthon.cocotomo.exception.DiaryNotFoundException;
+import com.uthon.cocotomo.exception.UserNotFoundException;
 import com.uthon.cocotomo.repository.DiaryRepository;
 import com.uthon.cocotomo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class DiaryService {
     public void save(AddDiaryRequest req) {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userRepository.findByEmail(userDetails.getUsername())
-            .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+            .orElseThrow(() -> new UserNotFoundException("사용자를 찾을 수 없습니다"));
         Diary diary = new Diary();
         diary.setUser(user);
         diary.setContent(req.getContent());
@@ -36,14 +36,14 @@ public class DiaryService {
     public void update(String date, AddDiaryRequest req) {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userRepository.findByEmail(userDetails.getUsername())
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+                .orElseThrow(() -> new UserNotFoundException("사용자를 찾을 수 없습니다"));
         Optional<Diary> optionalDiary = repository.findByDateAndUser(date, user);
         if (optionalDiary.isPresent()) {
             Diary diary = optionalDiary.get();
             diary.setContent(req.getContent());
             repository.save(diary);
         } else {
-            throw new RuntimeException("일기를 찾을 수 없음");
+            throw new DiaryNotFoundException("일기를 찾을 수 없습니다");
         }
     }
 
@@ -56,10 +56,10 @@ public class DiaryService {
         return dates;
     }
 
-    public ResponseEntity<?> getByDate(String date) {
+    public Object getByDate(String date) {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userRepository.findByEmail(userDetails.getUsername())
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-        return ResponseEntity.ok(repository.findByDateAndUser(date, user).orElse(null));
+                .orElseThrow(() -> new UserNotFoundException("사용자를 찾을 수 없습니다"));
+        return repository.findByDateAndUser(date, user).orElse(null);
     }
 }

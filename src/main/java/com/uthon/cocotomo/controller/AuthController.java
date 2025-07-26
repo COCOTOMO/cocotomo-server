@@ -29,42 +29,38 @@ public class AuthController {
 
     @Operation(summary = "이메일 인증 코드 발송", description = "회원가입 시 이메일 인증을 위한 코드를 발송합니다.")
     @PostMapping("/send-code")
-    public ResponseEntity<?> sendVerificationCode(@RequestBody EmailSendRequest request) {
-        try {
-            emailVerificationService.sendVerificationCode(request.getEmail());
-            return ResponseEntity.ok("인증 코드가 발송되었습니다. 5분 내에 입력해주세요.");
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body("이메일 발송에 실패했습니다: " + e.getMessage());
-        }
+    public ResponseEntity<BaseResponse> sendVerificationCode(@RequestBody EmailSendRequest request) {
+        emailVerificationService.sendVerificationCode(request.getEmail());
+        return ResponseEntity.ok(BaseResponse.success("인증 코드가 발송되었습니다. 5분 내에 입력해주세요."));
     }
 
     @Operation(summary = "이메일 인증 코드 확인", description = "발송된 이메일 인증 코드를 확인합니다.")
     @PostMapping("/verify-email")
-    public ResponseEntity<?> verifyEmail(@RequestBody EmailVerificationRequest request) {
+    public ResponseEntity<BaseResponse> verifyEmail(@RequestBody EmailVerificationRequest request) {
         boolean isVerified = emailVerificationService.verifyEmail(request.getEmail(), request.getVerificationCode());
         
         if (isVerified) {
-            return ResponseEntity.ok("이메일 인증이 완료되었습니다. 이제 회원가입을 진행하세요.");
+            return ResponseEntity.ok(BaseResponse.success("이메일 인증이 완료되었습니다. 이제 회원가입을 진행하세요."));
         } else {
-            return ResponseEntity.badRequest().body("인증 코드가 유효하지 않거나 만료되었습니다.");
+            return ResponseEntity.badRequest().body(BaseResponse.badRequest("인증 코드가 유효하지 않거나 만료되었습니다."));
         }
     }
 
     @Operation(summary = "회원가입", description = "먼저 이메일 인증을 해야합니다.")
     @PostMapping("/sign-up")
-    public ResponseEntity<?> registerUser(@RequestBody LoginRequest signUpRequest) {
+    public ResponseEntity<BaseResponse> registerUser(@RequestBody LoginRequest signUpRequest) {
         if (!emailVerificationService.isEmailVerified(signUpRequest.getEmail())) {
-            return ResponseEntity.badRequest().body("이메일 인증을 먼저 완료해주세요.");
+            return ResponseEntity.badRequest().body(BaseResponse.badRequest("이메일 인증을 먼저 완료해주세요."));
         }
         
         if (userService.findByEmail(signUpRequest.getEmail()) != null) {
-            return ResponseEntity.badRequest().body("이미 등록된 이메일입니다.");
+            return ResponseEntity.badRequest().body(BaseResponse.badRequest("이미 등록된 이메일입니다."));
         }
         
         userService.createUser(signUpRequest.getEmail(), signUpRequest.getPassword());
         userService.verifyUserEmail(signUpRequest.getEmail());
         
-        return ResponseEntity.ok("회원가입이 완료되었습니다. 로그인해주세요.");
+        return ResponseEntity.ok(BaseResponse.success("회원가입이 완료되었습니다. 로그인해주세요."));
     }
 
     @Operation(summary = "로그인", description = "이메일과 비밀번호로 로그인합니다.")
@@ -77,17 +73,18 @@ public class AuthController {
                             loginRequest.getPassword())
             );
         } catch (BadCredentialsException e) {
-            return ResponseEntity.badRequest().body("이메일 또는 비밀번호가 잘못되었습니다.");
+            return ResponseEntity.badRequest().body(BaseResponse.badRequest("이메일 또는 비밀번호가 잘못되었습니다."));
         }
 
         final UserDetails userDetails = userDetailsService.loadUserByUsername(loginRequest.getEmail());
         final String jwt = jwtUtil.generateToken(userDetails);
+        final JwtResponse jwtResponse = new JwtResponse(jwt, userDetails.getUsername());
 
-        return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getUsername()));
+        return ResponseEntity.ok(jwtResponse);
     }
 
     @GetMapping("/test")
-    public ResponseEntity<String> test() {
-        return ResponseEntity.ok("작동중임");
+    public ResponseEntity<BaseResponse> test() {
+        return ResponseEntity.ok(BaseResponse.success("작동중임"));
     }
 }

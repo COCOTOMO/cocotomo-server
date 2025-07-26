@@ -24,10 +24,8 @@ public class EmailVerificationService {
         String verificationCode = generateVerificationCode();
         String key = EMAIL_CODE_PREFIX + email;
         
-        // Redis에 인증 코드 저장 (5분 만료)
         redisTemplate.opsForValue().set(key, verificationCode, CODE_EXPIRATION_MINUTES, TimeUnit.MINUTES);
         
-        // 이메일 발송
         emailService.sendVerificationEmail(email, verificationCode);
         
         log.info("Verification code sent to email: {}", email);
@@ -41,7 +39,6 @@ public class EmailVerificationService {
             return false;
         }
         
-        // 인증 성공 시 코드 삭제하고 인증 상태 저장
         redisTemplate.delete(key);
         markEmailAsVerified(email);
         
@@ -51,7 +48,6 @@ public class EmailVerificationService {
 
     public void markEmailAsVerified(String email) {
         String key = EMAIL_VERIFIED_PREFIX + email;
-        // 인증 상태를 24시간 동안 저장
         redisTemplate.opsForValue().set(key, "verified", 24, TimeUnit.HOURS);
     }
 

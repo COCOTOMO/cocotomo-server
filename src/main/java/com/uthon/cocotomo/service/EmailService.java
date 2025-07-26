@@ -1,5 +1,6 @@
 package com.uthon.cocotomo.service;
 
+import com.uthon.cocotomo.exception.EmailSendException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.mail.SimpleMailMessage;
@@ -24,7 +25,7 @@ public class EmailService {
             log.info("Verification email sent to: {}", to);
         } catch (Exception e) {
             log.error("Failed to send email to: {}", to, e);
-            throw new RuntimeException("이메일 발송에 실패했습니다.");
+            throw new EmailSendException("이메일 발송에 실패했습니다.");
         }
     }
 }
