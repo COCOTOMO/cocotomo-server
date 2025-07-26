@@ -1,0 +1,108 @@
+> Task :compileJava
+> Task :processResources UP-TO-DATE
+> Task :classes
+> Task :resolveMainClassName
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+[32m :: Spring Boot :: [39m              [2m (v3.5.4)[0;39m
+
+[2m2025-07-27T00:12:46.192+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mcom.uthon.cocotomo.PracticeApplication  [0;39m [2m:[0;39m Starting PracticeApplication using Java 21.0.7 with PID 81493 (/Users/mingyupark/Desktop/Dev/practice/build/classes/java/main started by mingyupark in /Users/mingyupark/Desktop/Dev/practice)
+[2m2025-07-27T00:12:46.194+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mcom.uthon.cocotomo.PracticeApplication  [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
+[2m2025-07-27T00:12:46.752+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Multiple Spring Data modules found, entering strict repository configuration mode
+[2m2025-07-27T00:12:46.753+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+[2m2025-07-27T00:12:46.771+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.uthon.cocotomo.repository.ChatSessionRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[2m2025-07-27T00:12:46.772+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.uthon.cocotomo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+[2m2025-07-27T00:12:46.772+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 15 ms. Found 0 JDBC repository interfaces.
+[2m2025-07-27T00:12:46.777+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Multiple Spring Data modules found, entering strict repository configuration mode
+[2m2025-07-27T00:12:46.778+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2m2025-07-27T00:12:46.844+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 59 ms. Found 2 JPA repository interfaces.
+[2m2025-07-27T00:12:46.851+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Multiple Spring Data modules found, entering strict repository configuration mode
+[2m2025-07-27T00:12:46.852+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[2m2025-07-27T00:12:46.858+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.uthon.cocotomo.repository.ChatSessionRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2m2025-07-27T00:12:46.858+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.RepositoryConfigurationExtensionSupport[0;39m [2m:[0;39m Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.uthon.cocotomo.repository.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2m2025-07-27T00:12:46.858+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 1 ms. Found 0 Redis repository interfaces.
+[2m2025-07-27T00:12:47.120+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port 8080 (http)
+[2m2025-07-27T00:12:47.128+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
+[2m2025-07-27T00:12:47.129+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.43]
+[2m2025-07-27T00:12:47.159+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2025-07-27T00:12:47.159+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 834 ms
+[2m2025-07-27T00:12:47.246+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+[2m2025-07-27T00:12:47.273+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36morg.hibernate.Version                   [0;39m [2m:[0;39m HHH000412: Hibernate ORM core version 6.6.22.Final
+[2m2025-07-27T00:12:47.288+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mo.h.c.internal.RegionFactoryInitiator   [0;39m [2m:[0;39m HHH000026: Second-level cache disabled
+[2m2025-07-27T00:12:47.441+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mo.s.o.j.p.SpringPersistenceUnitInfo     [0;39m [2m:[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
+[2m2025-07-27T00:12:47.456+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Starting...
+[2m2025-07-27T00:12:47.568+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34eb5d01
+[2m2025-07-27T00:12:47.569+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Start completed.
+[2m2025-07-27T00:12:47.602+09:00[0;39m [33m WARN[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36morg.hibernate.orm.deprecation           [0;39m [2m:[0;39m HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2m2025-07-27T00:12:47.610+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36morg.hibernate.orm.connections.pooling   [0;39m [2m:[0;39m HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.43
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2m2025-07-27T00:12:48.029+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2m2025-07-27T00:12:48.090+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2m2025-07-27T00:12:48.271+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36meAuthenticationProviderManagerConfigurer[0;39m [2m:[0;39m Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+[2m2025-07-27T00:12:48.272+09:00[0;39m [33m WARN[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mr$InitializeUserDetailsManagerConfigurer[0;39m [2m:[0;39m Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+[2m2025-07-27T00:12:48.532+09:00[0;39m [33m WARN[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2m2025-07-27T00:12:48.685+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mo.s.v.b.OptionalValidatorFactoryBean    [0;39m [2m:[0;39m Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+[2m2025-07-27T00:12:48.912+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port 8080 (http) with context path '/'
+[2m2025-07-27T00:12:48.919+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [           main] [0;39m[36mcom.uthon.cocotomo.PracticeApplication  [0;39m [2m:[0;39m Started PracticeApplication in 2.992 seconds (process running for 3.312)
+[2m2025-07-27T00:12:55.401+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-1] [0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2m2025-07-27T00:12:55.401+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-1] [0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2025-07-27T00:12:55.402+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-1] [0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+Hibernate: select u1_0.id,u1_0.email,u1_0.email_verified,u1_0.password,u1_0.role from users u1_0 where u1_0.id=?
+Hibernate: insert into chat_sessions (completed_at,conversation_summary,created_at,current_stage,emotion_analysis,generated_diary,session_id,updated_at,user_id) values (?,?,?,?,?,?,?,?,?)
+Hibernate: select cs1_0.id,cs1_0.completed_at,cs1_0.conversation_summary,cs1_0.created_at,cs1_0.current_stage,cs1_0.emotion_analysis,cs1_0.generated_diary,cs1_0.session_id,cs1_0.updated_at,cs1_0.user_id from chat_sessions cs1_0 where cs1_0.session_id=?
+[2m2025-07-27T00:12:55.589+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-1] [0;39m[36mc.u.cocotomo.service.EmotionChatService [0;39m [2m:[0;39m Using Mock Chat Service
+[2m2025-07-27T00:12:55.590+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-1] [0;39m[36mc.u.cocotomo.service.MockChatService    [0;39m [2m:[0;39m Session: b0816f17-c08d-47f1-8a71-2d15941a43d9, Stage: INITIAL_EMOTION_ANALYSIS, Message count: 1, User message: 오늘 친구와 싸워서 기분이 정말 안 좋아요, History size: 1
+[2m2025-07-27T00:12:55.590+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-1] [0;39m[36mc.u.cocotomo.service.EmotionChatService [0;39m [2m:[0;39m Using Mock Chat Service
+[2m2025-07-27T00:12:55.591+09:00[0;39m [33m WARN[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-1] [0;39m[36mc.u.cocotomo.service.MockChatService    [0;39m [2m:[0;39m Could not extract user message from prompt
+Hibernate: update chat_sessions set completed_at=?,conversation_summary=?,created_at=?,current_stage=?,emotion_analysis=?,generated_diary=?,session_id=?,updated_at=?,user_id=? where id=?
+Hibernate: select cs1_0.id,cs1_0.completed_at,cs1_0.conversation_summary,cs1_0.created_at,cs1_0.current_stage,cs1_0.emotion_analysis,cs1_0.generated_diary,cs1_0.session_id,cs1_0.updated_at,cs1_0.user_id from chat_sessions cs1_0 where cs1_0.session_id=?
+[2m2025-07-27T00:13:08.094+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-2] [0;39m[36mc.u.cocotomo.service.EmotionChatService [0;39m [2m:[0;39m Using Mock Chat Service
+[2m2025-07-27T00:13:08.094+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-2] [0;39m[36mc.u.cocotomo.service.MockChatService    [0;39m [2m:[0;39m Session: b0816f17-c08d-47f1-8a71-2d15941a43d9, Stage: EMPATHY_RESPONSE, Message count: 2, User message: 네, 사소한 일로 친구가 갑자기 화를 내서 당황했어요, History size: 3
+Hibernate: select cs1_0.id,cs1_0.completed_at,cs1_0.conversation_summary,cs1_0.created_at,cs1_0.current_stage,cs1_0.emotion_analysis,cs1_0.generated_diary,cs1_0.session_id,cs1_0.updated_at,cs1_0.user_id from chat_sessions cs1_0 where cs1_0.session_id=?
+[2m2025-07-27T00:13:22.842+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-4] [0;39m[36mc.u.cocotomo.service.EmotionChatService [0;39m [2m:[0;39m Using Mock Chat Service
+[2m2025-07-27T00:13:22.843+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [nio-8080-exec-4] [0;39m[36mc.u.cocotomo.service.MockChatService    [0;39m [2m:[0;39m Session: b0816f17-c08d-47f1-8a71-2d15941a43d9, Stage: EMPATHY_RESPONSE, Message count: 3, User message: 어떻게 친구에게 먼저 사과해야 할까요?, History size: 5
+Hibernate: update chat_sessions set completed_at=?,conversation_summary=?,created_at=?,current_stage=?,emotion_analysis=?,generated_diary=?,session_id=?,updated_at=?,user_id=? where id=?
+[2m2025-07-27T00:14:30.421+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [ionShutdownHook] [0;39m[36mo.s.b.w.e.tomcat.GracefulShutdown       [0;39m [2m:[0;39m Commencing graceful shutdown. Waiting for active requests to complete
+[2m2025-07-27T00:14:30.426+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [tomcat-shutdown] [0;39m[36mo.s.b.w.e.tomcat.GracefulShutdown       [0;39m [2m:[0;39m Graceful shutdown complete
+[2m2025-07-27T00:14:30.442+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [ionShutdownHook] [0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+[2m2025-07-27T00:14:30.445+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [ionShutdownHook] [0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown initiated...
+[2m2025-07-27T00:14:30.449+09:00[0;39m [32m INFO[0;39m [35m81493[0;39m [2m--- [practice] [ionShutdownHook] [0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown completed.
+
+> Task :bootRun FAILED
+
+[Incubating] Problems report is available at: file:///Users/mingyupark/Desktop/Dev/practice/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun'.
+> Process 'command '/Users/mingyupark/Library/Java/JavaVirtualMachines/temurin-21.0.7/Contents/Home/bin/java'' finished with non-zero exit value 143
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 1m 46s
+4 actionable tasks: 3 executed, 1 up-to-date
