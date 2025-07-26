@@ -50,6 +50,11 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(List.of(
+            "http://localhost:8080",   // ✅ Swagger UI
+            "http://localhost:3000",   // ✅ React/Vue 등 프론트 (추가 가능)
+            "http://localhost:5173"
+        ));
         configuration.setAllowedOrigins(List.of("*"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
@@ -68,7 +73,9 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(authz -> authz
                 .requestMatchers("/auth/**").permitAll()
+                .requestMatchers("/register", "/login").permitAll()
                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
+                .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll() // ✅ 추가
                 .anyRequest().authenticated()
             )
             .authenticationProvider(authenticationProvider())
