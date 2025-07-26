@@ -1,7 +1,6 @@
 package com.uthon.cocotomo.controller;
 
 import com.uthon.cocotomo.dto.AddDiaryRequest;
-import com.uthon.cocotomo.dto.TodoItemsRequest;
 import com.uthon.cocotomo.service.DiaryService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class DiaryController {
     private final DiaryService service;
 
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<?> save(@RequestBody AddDiaryRequest req) {
         service.save(req);
         return ResponseEntity.ok("일기 저장 성공");
@@ -24,5 +23,16 @@ public class DiaryController {
     @PostMapping("/month")
     public ResponseEntity<?> getByMonth(@RequestParam String date) {
         return ResponseEntity.ok(service.getByMonth(date));
+    }
+
+    @PatchMapping("/{date}")
+    public ResponseEntity<?> update(@PathVariable String date, @RequestBody AddDiaryRequest req) {
+        service.update(date, req);
+        return ResponseEntity.ok("일기 수정 성공");
+    }
+
+    @GetMapping("/{date}")
+    public ResponseEntity<?> getById(@PathVariable String date) {
+        return ResponseEntity.ok(service.getByDate(date));
     }
 }
